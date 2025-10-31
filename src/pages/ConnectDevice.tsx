@@ -7,6 +7,7 @@ import { WaveHeader } from '@/components/WaveHeader';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
+import { NotificationBanner } from '@/components/NotificationBanner';
 
 const mockDevices = [
   { id: 1, name: 'SafeLink Band Pro', status: 'Available', signal: 'Strong' },
@@ -28,7 +29,10 @@ export default function ConnectDevice() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-24">
+      {!bluetoothOn && (
+        <NotificationBanner message="⚠️ Please turn on Bluetooth to connect your device." />
+      )}
       <Navbar />
       
       <WaveHeader className="mt-16">

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Bluetooth, Phone } from 'lucide-react';
+import { Bluetooth, Phone, Clock } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { WaveHeader } from '@/components/WaveHeader';
 import { Card } from '@/components/ui/card';
@@ -91,7 +91,7 @@ export default function Dashboard() {
           Quick Actions
         </motion.h2>
         
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl">
           <FeatureCard
             icon={Bluetooth}
             title="Connect Device"
@@ -106,6 +106,14 @@ export default function Dashboard() {
             description="Manage your emergency contact list"
             onClick={() => navigate('/emergency-contacts')}
             delay={0.8}
+          />
+
+          <FeatureCard
+            icon={Clock}
+            title="History"
+            description="View location and alert activity logs"
+            onClick={() => navigate('/history')}
+            delay={0.9}
           />
         </div>
       </div>
