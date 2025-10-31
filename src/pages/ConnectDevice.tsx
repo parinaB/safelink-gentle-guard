@@ -35,7 +35,7 @@ export default function ConnectDevice() {
       )}
       <Navbar />
       
-      <WaveHeader className="mt-16">
+      <WaveHeader className="mt-16" contentClassName="pb-20 md:pb-24">
         <button 
           onClick={() => navigate('/dashboard')}
           className="flex items-center gap-2 text-primary-foreground/90 hover:text-primary-foreground mb-4 transition-colors"

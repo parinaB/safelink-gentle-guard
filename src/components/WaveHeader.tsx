@@ -4,9 +4,10 @@ import { motion } from 'framer-motion';
 interface WaveHeaderProps {
   children?: ReactNode;
   className?: string;
+  contentClassName?: string; // extra classes for inner container spacing
 }
 
-export function WaveHeader({ children, className = '' }: WaveHeaderProps) {
+export function WaveHeader({ children, className = '', contentClassName = '' }: WaveHeaderProps) {
   return (
     <motion.div 
       initial={{ opacity: 0, y: -20 }}
@@ -14,7 +15,7 @@ export function WaveHeader({ children, className = '' }: WaveHeaderProps) {
       transition={{ duration: 0.6 }}
       className={`relative bg-primary text-primary-foreground ${className}`}
     >
-      <div className="relative z-10 container mx-auto px-4 py-12">
+      <div className={`relative z-10 container mx-auto px-4 py-12 ${contentClassName}`}>
         {children}
       </div>
       
